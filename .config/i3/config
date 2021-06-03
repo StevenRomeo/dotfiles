@@ -190,6 +190,9 @@ for_window [class="^.*"] border pixel 0
 gaps inner 5
 gaps outer 5
 
+# Start the Greenclip service (systemd unit files have issues on arch - https://github.com/erebe/greenclip/issues/69 
+exec --no-startup-id greenclip daemon>/dev/null
+
 # Start geoclue service (used for redshift colour control 
 # TODO: Turn this into a systemd service
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
